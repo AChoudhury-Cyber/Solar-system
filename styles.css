@@ -1,0 +1,157 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.starry-sky {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/starfield.png');
+  z-index: -1;
+  animation: move-stars 50s linear infinite;
+}
+
+.solar-system {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 50%;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.sun,
+.planet,
+.moon,
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(0 0 15px rgba(255, 204, 0, 0.8));
+}
+
+.sun {
+  width: 160px;
+  height: 160px;
+  background-color: #ffcc00;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 10s linear infinite, glow 1.5s infinite alternate;
+}
+
+.planet {
+  width: 40px;
+  height: 40px;
+}
+
+.mercury {
+  background-color: #ff6600;
+  left: 70vw;
+  top: 35vh;
+  animation: rotate 2s linear infinite;
+}
+
+.venus {
+  background-color: #ff9900;
+  left: 60vw;
+  top: 45vh;
+  animation: rotate 5s linear infinite;
+}
+
+.earth {
+  background-color: #0099ff;
+  left: 50vw;
+  top: 55vh;
+  animation: rotate 6s linear infinite;
+}
+
+.moon {
+  width: 16px;
+  height: 16px;
+  background-color: #cccccc;
+  left: 16vw;
+  top: 0;
+  animation: rotate 2s linear infinite;
+}
+
+.mars {
+  background-color: #ff3300;
+  left: 40vw;
+  top: 65vh;
+  animation: rotate 7s linear infinite;
+}
+
+.jupiter {
+  background-color: #ff9900;
+  left: 30vw;
+  top: 20vh;
+  width: 80px;
+  height: 80px;
+  animation: rotate 12s linear infinite;
+}
+
+.saturn {
+  background-color: #ffcc00;
+  left: 20vw;
+  top: 30vh;
+  width: 72px;
+  height: 72px;
+  animation: rotate 15s linear infinite;
+}
+
+.ring {
+  border: 2px solid #ffcc00;
+  width: 124px;
+  height: 124px;
+  left: -28px;
+  top: -28px;
+  animation: rotate 15s linear infinite;
+}
+
+.uranus {
+  background-color: #66ccff;
+  left: 15vw;
+  top: 45vh;
+  animation: rotate 10s linear infinite;
+}
+
+.neptune {
+  background-color: #3366ff;
+  left: 10vw;
+  top: 55vh;
+  animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 15px rgba(255, 204, 0, 0.8));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 1));
+  }
+}
+
+@keyframes move-stars {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 1000px 1000px;
+  }
+}
